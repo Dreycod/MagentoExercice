@@ -1,0 +1,64 @@
+# =========================================================================
+# "Pro" Magento 2 .gitignore
+# Principle: only YOUR code is versioned. Everything Composer can
+# reinstall identically (magento2-base scaffolding + vendor/) is ignored.
+# =========================================================================
+
+# ---- Magento core scaffolding shipped by magento/magento2-base ----
+# These are reinstalled byte-for-byte by `composer install`, no reason
+# to version them — keeping them out is what makes the repo look like
+# a real project instead of a full Magento mirror.
+/dev/
+/lib/
+/setup/
+/phpserver/
+/CHANGELOG.md
+/COPYING.txt
+/LICENSE.txt
+/LICENSE_AFL.txt
+/SECURITY.md
+/Gruntfile.js.sample
+/grunt-config.json.sample
+/package.json.sample
+/.php-cs-fixer.dist.php
+
+# ---- Magento 2 generated / runtime ----
+/var/*
+!/var/.htaccess
+/generated/*
+!/generated/.htaccess
+/pub/media/*
+!/pub/media/.htaccess
+/pub/static/*
+!/pub/static/.htaccess
+/pub/sitemap*.xml
+/pub/sitemap*.xml.gz
+
+# ---- Dependencies (reinstalled via `composer install`) ----
+/vendor/
+/node_modules/
+
+# ---- Sensitive / environment-specific config ----
+# Note: app/etc/config.php (module enable/disable list) SHOULD be committed.
+# Only env.php (DB credentials, crypt key) and secrets are ignored.
+/app/etc/env.php
+auth.json
+.env
+
+# ---- Setup / install artifacts ----
+/app/etc/config.php.bak
+.htaccess.sample
+
+# ---- Logs ----
+/var/log/*.log
+/var/report/*
+
+# ---- IDE / OS ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Composer ----
+composer.lock.bak
