@@ -361,6 +361,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Dreycod_CatalogFilter' => 1,
+        'Dreycod_ProductInfoCommand' => 1,
         'Dreycod_ProductSetup' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,
